@@ -9,13 +9,17 @@ def load_data():
     return X, y
 
 def linear_regression(X, y):
-    X_train = [np.append(single_data, 1) for single_data in X]
-    w = np.zeros((X_train[0].T).shape, dtype = dfloat)
-
-    return 0
+    Xbar = np.concatenate((np.ones((X.shape[0], 1)), X), axis = 1)
+    return np.dot(np.linalg.pinv(np.dot(Xbar.T, Xbar)), np.dot(Xbar.T, y))
 
 if __name__ == "__main__":
     X, y = load_data()
-    X_train = [np.append(single_data, 1) for single_data in X]
-    w = np.zeros((X_train[0].T).shape, dtype = float)
+
+    w = linear_regression(X, y)
     print(w)
+
+    plt.plot(X.T, y.T, 'ro') 
+    plt.xlabel('Height (cm)')
+    plt.ylabel('Weight (kg)')
+    plt.show()
+    
