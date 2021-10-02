@@ -14,12 +14,6 @@ def linear_regression(X, y):
 
 if __name__ == "__main__":
     X, y = load_data()
-
     w = linear_regression(X, y)
-    print(w)
-
-    plt.plot(X.T, y.T, 'ro') 
-    plt.xlabel('Height (cm)')
-    plt.ylabel('Weight (kg)')
-    plt.show()
+    #print(w)
     
