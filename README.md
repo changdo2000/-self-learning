@@ -17,6 +17,5 @@ for window:
 for windown: 
 py -m pip install requirement.txt
 
-
 # leaving the virtual environment
 deactivate
