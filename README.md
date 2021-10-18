@@ -12,7 +12,7 @@ py -m venv env
 .\env\Scripts\activate
 
 # installing packages
-py -m pip install requirement.txt
+pip install -r requirement.txt
 
 # leaving the virtual environment
 deactivate
