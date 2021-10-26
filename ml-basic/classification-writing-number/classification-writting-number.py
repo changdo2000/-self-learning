@@ -13,20 +13,6 @@ def softmax(Z):
     x = np.exp(Z - np.ndarray.max(Z))
     return x / np.sum(x)
 
-def softmax1(z):
-    exp = np.exp(z - np.max(z))
-    for i in range(len(z)):
-        exp[i] /= np.sum(exp[i])
-    return exp
-
-def stable_softmax(x):
-    z = x - max(x)
-    numerator = np.exp(z)
-    denominator = np.sum(numerator)
-    ssoftmax = numerator/denominator
-
-    return ssoftmax
-
 def one_hot(y, c):
     y_hot = np.zeros((y.size, c))
     y_hot[np.arange(y.size), y] = 1
